@@ -17,7 +17,7 @@ parser.add_argument('--epochs', type=int, default=20)
 flags = parser.parse_args()
 
 # load train data
-dataset1 = HDF5Dataset('/cluster/work/math/ebeck/data/pacs/carton_train.hdf5')
+dataset1 = HDF5Dataset('/cluster/work/math/ebeck/data/pacs/cartoon_train.hdf5')
 dataset2 = HDF5Dataset('/cluster/work/math/ebeck/data/pacs/art_painting_train.hdf5')
 dataset3 = HDF5Dataset('/cluster/work/math/ebeck/data/pacs/sketch_train.hdf5')
 train_data = data.DataLoader(data.ConcatDataset([dataset1, dataset2, dataset3]), num_workers=1, 
