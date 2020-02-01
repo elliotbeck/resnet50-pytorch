@@ -8,7 +8,7 @@ class resnet(nn.Module):
       self.resnet50 = models.resnet50(pretrained=True)
       # for param in self.resnet50.parameters():
       #    param.requires_grad = False
-      self.resnet50.fc = nn.Linear(self.resnet50.fc.in_features, hidden_dims)
+      self.resnet50.fc = nn.Linear(self.resnet50.fc.in_features, hidden_dim)
       self.linear1 = nn.Linear(hidden_dim, hidden_dim)
       self.linear2 = nn.Linear(hidden_dim, num_classes)
       self.dropout = nn.Dropout(0.5)
