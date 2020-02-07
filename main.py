@@ -2,6 +2,7 @@ import torch
 from torch import nn, optim
 import argparse
 import numpy as np
+import random
 from models import resnet
 from torch.utils import data
 from data_loader import HDF5Dataset
@@ -14,7 +15,11 @@ parser.add_argument('--batch_size', type=int, default=24)
 parser.add_argument('--l2_regularizer_weight', type=float,default=0.001)
 parser.add_argument('--lr', type=float, default=0.001)
 parser.add_argument('--epochs', type=int, default=50)
+parser.add_argument('--seed', type=int, default=1)
 flags = parser.parse_args()
+
+# set seed
+random.seed(flags.seed)
 
 # load train data
 dataset1 = HDF5Dataset('/cluster/work/math/ebeck/data/pacs/cartoon_train.hdf5')
