@@ -10,10 +10,10 @@ from train import validate_epoch, train_epoch
 # set flags
 parser = argparse.ArgumentParser(description='PACS')
 parser.add_argument('--hidden_dim', type=int, default=256)
-parser.add_argument('--batch_size', type=int, default=8)
+parser.add_argument('--batch_size', type=int, default=24)
 parser.add_argument('--l2_regularizer_weight', type=float,default=0.001)
 parser.add_argument('--lr', type=float, default=0.001)
-parser.add_argument('--epochs', type=int, default=20)
+parser.add_argument('--epochs', type=int, default=50)
 flags = parser.parse_args()
 
 # load train data
