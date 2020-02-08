@@ -9,7 +9,7 @@ class resnet(nn.Module):
       # for param in self.resnet50.parameters():
       #    param.requires_grad = False
       self.resnet50.fc = nn.Linear(self.resnet50.fc.in_features, hidden_dim)
-      self.linear1 = nn.Linear(hidden_dim, hidden_dim)
+      self.linear1 = nn.Linear(hidden_dim, num_classes)
       # self.linear2 = nn.Linear(hidden_dim, num_classes)
       self.dropout = nn.Dropout(0.5)
       self.relu = nn.ReLU(True)
