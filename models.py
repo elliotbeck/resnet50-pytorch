@@ -1,6 +1,7 @@
 import torchvision.models as models
 from torch import nn
 
+# use a simple pre-trained ResNet50 to classify PACS
 class resnet(nn.Module):
    def __init__(self, hidden_dim, num_classes):
       super(resnet, self).__init__()
